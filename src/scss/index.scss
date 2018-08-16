@@ -1,0 +1,36 @@
+@import "scsscomponents/header";
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'champagneandlimousines';
+    src: url('/src/fonts/Champagne&Limousines.ttf');
+    font-weight: normal;
+}
+
+body {
+    background: #E1E1E1 !important;
+}
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    max-height: 100vh;
+    color: #58585B; 
+	font-family: 'champagneandlimousines' !important;
+	font-size: 20px;
+}
+

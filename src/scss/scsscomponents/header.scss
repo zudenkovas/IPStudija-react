@@ -1,0 +1,16 @@
+
+.logo {
+    background-image: url(/src/img/iplogo.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: block;
+    max-height: 90px;
+    overflow: hidden;
+}
+
+.logo img {
+    visibility: hidden;
+    display:block;
+    width: 100%;
+}

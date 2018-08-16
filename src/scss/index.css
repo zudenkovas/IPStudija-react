@@ -1,0 +1,48 @@
+.logo {
+  background-image: url(/src/img/iplogo.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: block;
+  max-height: 90px;
+  overflow: hidden;
+}
+
+.logo img {
+  visibility: hidden;
+  display: block;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "champagneandlimousines";
+  src: url("/src/fonts/Champagne&Limousines.ttf");
+  font-weight: normal;
+}
+body {
+  background: #E1E1E1 !important;
+}
+
+html, body {
+  height: 100%;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+  max-height: 100vh;
+  color: #58585B;
+  font-family: "champagneandlimousines" !important;
+  font-size: 20px;
+}
+
+/*# sourceMappingURL=index.css.map */
