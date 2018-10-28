@@ -1,4 +1,5 @@
-import DataStore from 'flux/stores/DataStore.js'
+import DataStore from 'flux/stores/DataStore.js';
+import Menu from 'components/Menu.js';
 
 class About extends React.Component {
 constructor(){
@@ -28,6 +29,9 @@ getData(){
 
                 {/* <div dangerouslySetInnerHTML={{__html: pageData.excerpt.rendered}} />
                 <div>{pageData.acf.text}</div> */}
+
+             
+
             </div>
         );
     }

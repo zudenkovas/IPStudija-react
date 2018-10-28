@@ -19,10 +19,8 @@ import {
     BrowserRouter as Router,
     Route,
     Redirect,
-    Switch,
+    Switch
 } from 'react-router-dom';
-
-
 
 
 class AppInitializer extends Component {
@@ -31,19 +29,14 @@ class AppInitializer extends Component {
         super();
         this.state = {
             postId: undefined,
-            menuText: "MENIU",
-            data: undefined,
+            menuText: "MENIU"
 
         };
 
         this.getPostId = this.getPostId.bind(this);
         this.menuTextSwitch = this.menuTextSwitch.bind(this);
-        this.getData = this.getData.bind(this);
-        
     }
 
-
-    
     templates = {
         'portfolio': About,
         'contact': Contact,
@@ -54,26 +47,6 @@ class AppInitializer extends Component {
         'project': Project
 
     }
-
-    componentWillMount(){
-       
-       
-
-        console.log(this.state.data, "data log")
-    }
-
-    componentDidMount(){
-        this.getData();
-    }
-
-    getData(){
-        DataActions.getPages((response) => {
-            console.log(response)
-            this.setState({data: response})
-        })
-    }
-
-   
 
     getPostId(received){
         this.state.postId = received;
@@ -87,11 +60,6 @@ class AppInitializer extends Component {
     }
 
     buildProjectRoutes(data) {
-        while (!data){
-            console.log('cia as ')
-            return
-        }
-        
         return data.posts.map((post, i) => {
             return (
                 <Route
@@ -104,11 +72,11 @@ class AppInitializer extends Component {
         })
     }
 
-    // run() {
-    //     DataActions.getPages((response) => {
-            render(){
-                return (this.state.data?
-                    
+    run() {
+        DataActions.getPages((response) => {
+            render(
+
+
                 <Router>
 
                     <div>
@@ -123,8 +91,8 @@ class AppInitializer extends Component {
                                 <Route path="/isigyti" render={(props) => (<Products {...props} someProp={100} />)} exact />
                                 <Route path="/duk" render={(props) => (<Faq {...props} someProp={100} />)} exact />
                                 <Route path="/kontaktai" render={(props) => (<Contact {...props} someProp={100} />)} exact />
-                                <Route path="/projektai/:projektas" render={(props) => (<Project {...props} postId={this.state.postId} />)} />
-                                {this.buildProjectRoutes(this.state.data)}
+                                <Route path="/projektas" render={(props) => (<Project {...props} postId={this.state.postId} />)} />
+                                {this.buildProjectRoutes(response)}
                                 <Route render={() => { return <Redirect to="/" /> }} />
                             </Switch>
                         <Menu menuTextSwitch={this.menuTextSwitch}/>
@@ -132,19 +100,14 @@ class AppInitializer extends Component {
                         <MenuButton menuText={this.state.menuText}/>
 
                     </div>
-                </Router>:
-                <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
-                )
+                </Router>
 
-                // , document.getElementById('app')
-            // );
-        // });
+                , document.getElementById('app')
+            );
+        });
     }
 }
 
-const app = document.getElementById("app");
-
-ReactDOM.render(<AppInitializer />, app);
 
 
-// new AppInitializer().run();
+new AppInitializer().run();

@@ -1,0 +1,41 @@
+$fontcolor: #58585B;
+
+.dot {
+    height: 10px;
+    width: 10px;
+    border: 2px solid  $fontcolor;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.faq-question {
+    padding-left: 8px;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+.faq-components {
+    display: flex;
+    justify-content: center;
+}
+
+.faq-component {
+    cursor: pointer;
+}
+
+.faq-component:hover {
+    .dot {
+        height: 10px;
+        width: 10px;
+        border: 2px solid  white;
+        background-color: white;
+        border-radius: 50%;
+        display: inline-block; 
+    }
+
+    .faq-question {
+        color: white;
+        // font-weight: bold;
+    }
+
+}

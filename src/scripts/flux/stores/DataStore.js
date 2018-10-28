@@ -14,6 +14,7 @@ class DataStore {
             getAll:         this.getAll,
             getAllPages:    this.getAllPages,
             getAllPosts:    this.getAllPosts,
+            getPostById:    this.getPostById,
             getPageBySlug:  this.getPageBySlug
         });
     }
@@ -36,6 +37,21 @@ class DataStore {
     // Returns all Posts
     getAllPosts() { 
         return this.getState().data.posts; 
+    }
+
+    // Return post by Id
+    getPostById(id) {
+        const posts = this.getState().data.posts;
+        var postId = Number(id);
+        var post;
+       for (let i=0; i<posts.length; i++){
+           if (posts[i].id === postId){
+               post = posts[i];
+               
+           }
+       }
+
+       return post;
     }
 
     // Returns a Page by provided slug

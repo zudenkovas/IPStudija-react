@@ -1,0 +1,167 @@
+.projects {
+    img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+    }
+}
+
+//Project div styling
+
+.project {
+  padding: 5px 5px !important;
+  position: relative;
+  transition: 0.5s ease;
+
+  .project-text{
+    text-decoration: none;
+    color: white;
+  font-weight: 300;
+  }
+}
+
+.project-image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.project-overlay {
+  position: absolute;
+  bottom: calc(100% - 5px);
+  padding: 0 10px;
+  /* left: 0; */
+  /* right: 0; */
+  overflow: hidden;
+  width: calc(100% - 10px);
+  height: 0;
+  transition: 0.5s ease;
+}
+
+.project-text {
+  transition: .5s ease;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.projects:hover .project{
+  opacity: 0.3
+}
+
+.projects .project:hover{
+   
+  opacity: 1;
+  transition: 0.5s ease;
+}
+
+.project:hover .project-overlay {
+
+  bottom: 5px;
+  height: calc(100% - 10px);
+}
+
+// .project-overlay:hover .project{
+//   opacity:1;
+//   transition: 0.5s ease;
+// }
+
+
+
+
+// .project:hover .project-image {
+//   opacity: 0.2;
+//   background-color: #58585B;
+// }
+
+
+
+// Loading animation
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+  }
+  .lds-ellipsis div {
+    position: absolute;
+    top: 27px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #58585B;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+  }
+  .lds-ellipsis div:nth-child(1) {
+    left: 6px;
+    animation: lds-ellipsis1 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(2) {
+    left: 6px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(3) {
+    left: 26px;
+    animation: lds-ellipsis2 0.6s infinite;
+  }
+  .lds-ellipsis div:nth-child(4) {
+    left: 45px;
+    animation: lds-ellipsis3 0.6s infinite;
+  }
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(19px, 0);
+    }
+  }
+ //--------------------------------- 
+
+// .project {
+//     width: 33%;
+//     float: left;
+// }
+
+// .render-frame {
+//     text-align: center;
+//     position: relative
+// }
+
+// .projects {
+//     display: inline-block;
+// }
+
+
+// @media screen and (min-width: 518px){
+//     .projects {
+//         img{
+//             height: 15vw;
+//         }
+//     }
+    
+// }
